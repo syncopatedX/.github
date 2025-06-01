@@ -15,12 +15,12 @@
                         inter: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'brand-primary': '#0A0A0A',
-                        'brand-secondary': '#1A1A1A',
-                        'brand-accent': '#4F46E5',
-                        'brand-accent-hover': '#4338CA',
-                        'text-primary': '#F3F4F6',
-                        'text-secondary': '#9CA3AF',
+                        'brand-primary': '#2A3447',       // Stormy Darkest Blue/Charcoal
+                        'brand-secondary': '#5C6476',      // Stormy Dark Slate Blue/Gray
+                        'brand-accent': '#848C8E',         // Stormy Medium Gray
+                        'brand-accent-hover': '#7A8284',   // Stormy Darker Medium Gray
+                        'text-primary': '#F0EAD6',         // Stormy Pale Linen
+                        'text-secondary': '#B0B8B0',      // Stormy Desaturated Green-Gray
                     },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
@@ -51,21 +51,22 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #1A1A1A;
+            background: #5C6476; /* new brand-secondary */
         }
         ::-webkit-scrollbar-thumb {
-            background: #4F46E5;
+            background: #848C8E; /* new brand-accent */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #4338CA;
+            background: #7A8284; /* new brand-accent-hover */
         }
-        .feature-card, .roadmap-phase-card { /* Added roadmap-phase-card */
+        .feature-card, .roadmap-phase-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .feature-card:hover, .roadmap-phase-card:hover { /* Added roadmap-phase-card */
+        .feature-card:hover, .roadmap-phase-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
+            /* Adjusting shadow color to be more neutral or use new accent */
+            box-shadow: 0 10px 15px -3px rgba(132, 140, 142, 0.2), 0 4px 6px -2px rgba(132, 140, 142, 0.1);
         }
         /* Staggered animations */
         .animate-delay-100 { animation-delay: 0.1s; }
@@ -80,7 +81,7 @@
             width: 24px;
             height: 24px;
             stroke-width: 2;
-            color: #4F46E5; /* brand-accent */
+            color: #848C8E; /* new brand-accent */
         }
         .section-title-underline {
             position: relative;
@@ -94,10 +95,10 @@
             bottom: 0;
             width: 60px;
             height: 3px;
-            background-color: #4F46E5; /* brand-accent */
+            background-color: #848C8E; /* new brand-accent */
             border-radius: 2px;
         }
-        .roadmap-timeline::before {
+        .roadmap-timeline::before { /* This class is not currently used in HTML, but style kept for potential future use */
             content: '';
             position: absolute;
             left: 50%;
@@ -105,7 +106,7 @@
             top: 20px;
             bottom: 20px;
             width: 3px;
-            background-color: #374151; /* gray-700 */
+            background-color: #5C6476; /* new brand-secondary */
             z-index: 0;
         }
         .roadmap-phase-card {
@@ -118,14 +119,12 @@
 
     <header class="py-6 px-4 sm:px-6 lg:px-8 sticky top-0 z-50 bg-brand-primary/80 backdrop-blur-md shadow-lg">
         <nav class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-brand-accent animate-slide-in-left">
-                Syncopated<span class="text-text-primary">X</span>
-            </h1>
+            <h1 class="text-3xl font-bold text-brand-accent animate-slide-in-left"> Syncopated<span class="text-text-primary">X</span> </h1>
             <div class="space-x-4 animate-slide-in-right">
                 <a href="#features" class="text-text-secondary hover:text-text-primary transition-colors duration-300">Components</a>
                 <a href="#architecture" class="text-text-secondary hover:text-text-primary transition-colors duration-300">Architecture</a>
                 <a href="#roadmap" class="text-text-secondary hover:text-text-primary transition-colors duration-300">Roadmap</a>
-                <a href="#download" class="bg-brand-accent hover:bg-brand-accent-hover text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Get ISO</a>
+                <a href="#download" class="bg-brand-accent hover:bg-brand-accent-hover text-text-primary font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300">Get ISO</a>
             </div>
         </nav>
     </header>
@@ -133,7 +132,7 @@
     <section class="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-primary">
         <div class="text-center max-w-3xl mx-auto">
             <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in-up hero-section-content">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-text-secondary via-text-primary to-text-secondary">
                     SyncopatedX Distribution
                 </span>
             </h2>
@@ -141,10 +140,10 @@
                 An ArchLinux-based environment, optimized for <strong class="text-text-primary">low-latency audio processing</strong> and <strong class="text-text-primary">integrated AI tooling</strong>.
             </p>
             <div class="space-x-4 animate-fade-in-up animate-delay-400 hero-section-content">
-                <a href="#features" class="bg-brand-accent hover:bg-brand-accent-hover text-white font-bold py-3 px-8 rounded-lg text-lg shadow-xl transition-transform transform hover:scale-105 duration-300 inline-block">
+                <a href="#features" class="bg-brand-accent hover:bg-brand-accent-hover text-text-primary font-bold py-3 px-8 rounded-lg text-lg shadow-xl transition-transform transform hover:scale-105 duration-300 inline-block">
                     View Components
                 </a>
-                <a href="https://github.com/your-repo/syncopatedx" target="_blank" rel="noopener noreferrer" class="border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white font-bold py-3 px-8 rounded-lg text-lg shadow-xl transition-all transform hover:scale-105 duration-300 inline-block">
+                <a href="https://github.com/your-repo/syncopatedx" target="_blank" rel="noopener noreferrer" class="border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-text-primary font-bold py-3 px-8 rounded-lg text-lg shadow-xl transition-all transform hover:scale-105 duration-300 inline-block">
                     Source Repository
                 </a>
             </div>
@@ -154,7 +153,7 @@
     <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-secondary">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 section-title-underline">Core System Components</h2>
+                <h2 class="text-4xl font-bold mb-4 section-title-underline text-text-primary">Core System Components</h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto">
                     SyncopatedX integrates the following key technologies for professional audio and AI workflows.
                 </p>
@@ -167,10 +166,10 @@
                         <h3 class="text-2xl font-semibold text-text-primary">Base System</h3>
                     </div>
                     <ul class="space-y-2 text-text-secondary">
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>ArchLinux Foundation</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Real-Time LTS Kernel</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Low Latency Optimizations</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Dedicated Audio User Groups</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>ArchLinux Foundation</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Real-Time LTS Kernel</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Low Latency Optimizations</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Dedicated Audio User Groups</li>
                     </ul>
                 </div>
 
@@ -180,10 +179,10 @@
                         <h3 class="text-2xl font-semibold text-text-primary">AI Integration</h3>
                     </div>
                     <ul class="space-y-2 text-text-secondary">
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>ReaperLLM Support</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Local AI Model Execution</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>DAW Bridging for AI</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Hardware AI Acceleration Support</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>ReaperLLM Support</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Local AI Model Execution</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>DAW Bridging for AI</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Hardware AI Acceleration Support</li>
                     </ul>
                 </div>
 
@@ -193,10 +192,10 @@
                         <h3 class="text-2xl font-semibold text-text-primary">Audio Stack</h3>
                     </div>
                     <ul class="space-y-2 text-text-secondary">
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>JACK & PipeWire Compatibility</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Professional Audio I/O Routing</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Selected Plugin Suite</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Included Sample Libraries</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>JACK & PipeWire Compatibility</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Professional Audio I/O Routing</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Selected Plugin Suite</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Included Sample Libraries</li>
                     </ul>
                 </div>
 
@@ -206,10 +205,10 @@
                         <h3 class="text-2xl font-semibold text-text-primary">Build System</h3>
                     </div>
                     <ul class="space-y-2 text-text-secondary">
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Archiso-based Build Process</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Live Environment & Installer</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multi-Kernel Options</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Custom ISO Generation</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Archiso-based Build Process</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Live Environment & Installer</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multi-Kernel Options</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Custom ISO Generation</li>
                     </ul>
                 </div>
                 
@@ -219,10 +218,10 @@
                         <h3 class="text-2xl font-semibold text-text-primary">Config Management</h3>
                     </div>
                      <ul class="space-y-2 text-text-secondary">
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ansible for System Configuration</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Hardware Configuration Profiles</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Managed Software Deployment</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>AI Model Deployment Scripts</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ansible for System Configuration</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Hardware Configuration Profiles</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Managed Software Deployment</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>AI Model Deployment Scripts</li>
                     </ul>
                 </div>
 
@@ -232,10 +231,10 @@
                         <h3 class="text-2xl font-semibold text-text-primary">User Environment</h3>
                     </div>
                     <ul class="space-y-2 text-text-secondary">
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pre-configured Dotfiles</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Optimized WM Configurations</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Workflow-Specific Setups</li>
-                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Project & Session Templates</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pre-configured Dotfiles</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Optimized WM Configurations</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Workflow-Specific Setups</li>
+                        <li class="flex items-center"><svg class="lucide-icon w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Project & Session Templates</li>
                     </ul>
                 </div>
             </div>
@@ -245,7 +244,7 @@
     <section id="architecture" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-primary">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 section-title-underline">System Architecture Overview</h2>
+                <h2 class="text-4xl font-bold mb-4 section-title-underline text-text-primary">System Architecture Overview</h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto">
                     A summary of the SyncopatedX component structure.
                 </p>
@@ -253,28 +252,22 @@
             <div class="bg-brand-secondary p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-center">
                 <h3 class="text-3xl font-semibold text-brand-accent mb-6">SyncopatedX Distribution Structure</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                    <div class="p-4 border border-gray-700 rounded-lg">
-                        <h4 class="font-semibold text-text-primary text-lg mb-2">Base System</h4>
+                    <div class="p-4 border border-brand-accent rounded-lg"> <h4 class="font-semibold text-text-primary text-lg mb-2">Base System</h4>
                         <ul class="text-sm text-text-secondary list-disc list-inside"><li>ArchLinux</li><li>RT-LTS Kernel</li><li>Low Latency</li><li>Audio Groups</li></ul>
                     </div>
-                    <div class="p-4 border border-gray-700 rounded-lg">
-                        <h4 class="font-semibold text-text-primary text-lg mb-2">AI Integration</h4>
+                    <div class="p-4 border border-brand-accent rounded-lg"> <h4 class="font-semibold text-text-primary text-lg mb-2">AI Integration</h4>
                         <ul class="text-sm text-text-secondary list-disc list-inside"><li>ReaperLLM</li><li>Local Models</li><li>DAW Bridge</li><li>Hardware AI</li></ul>
                     </div>
-                    <div class="p-4 border border-gray-700 rounded-lg">
-                        <h4 class="font-semibold text-text-primary text-lg mb-2">Audio Stack</h4>
+                    <div class="p-4 border border-brand-accent rounded-lg"> <h4 class="font-semibold text-text-primary text-lg mb-2">Audio Stack</h4>
                         <ul class="text-sm text-text-secondary list-disc list-inside"><li>JACK/PipeWire</li><li>Pro Audio I/O</li><li>Plugin Suite</li><li>Sample Libs</li></ul>
                     </div>
-                    <div class="p-4 border border-gray-700 rounded-lg">
-                        <h4 class="font-semibold text-text-primary text-lg mb-2">Build System</h4>
+                    <div class="p-4 border border-brand-accent rounded-lg"> <h4 class="font-semibold text-text-primary text-lg mb-2">Build System</h4>
                         <ul class="text-sm text-text-secondary list-disc list-inside"><li>Archiso</li><li>Live/Install</li><li>Multi-Kernel</li><li>Custom ISO</li></ul>
                     </div>
-                    <div class="p-4 border border-gray-700 rounded-lg">
-                        <h4 class="font-semibold text-text-primary text-lg mb-2">Config Mgmt</h4>
+                    <div class="p-4 border border-brand-accent rounded-lg"> <h4 class="font-semibold text-text-primary text-lg mb-2">Config Mgmt</h4>
                         <ul class="text-sm text-text-secondary list-disc list-inside"><li>Ansible</li><li>Hardware Cfg</li><li>Software Mgmt</li><li>AI Deploy</li></ul>
                     </div>
-                    <div class="p-4 border border-gray-700 rounded-lg">
-                        <h4 class="font-semibold text-text-primary text-lg mb-2">User Env</h4>
+                    <div class="p-4 border border-brand-accent rounded-lg"> <h4 class="font-semibold text-text-primary text-lg mb-2">User Env</h4>
                         <ul class="text-sm text-text-secondary list-disc list-inside"><li>Dotfiles</li><li>WM Configs</li><li>Workflows</li><li>Templates</li></ul>
                     </div>
                 </div>
@@ -286,7 +279,7 @@
     <section id="roadmap" class="py-20 px-4 sm:px-6 lg:px-8 bg-brand-secondary">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 section-title-underline">Implementation Roadmap</h2>
+                <h2 class="text-4xl font-bold mb-4 section-title-underline text-text-primary">Implementation Roadmap</h2>
                 <p class="text-lg text-text-secondary max-w-2xl mx-auto">
                     Our projected development timeline. This roadmap is a living document and subject to refinement as the project evolves.
                 </p>
@@ -295,7 +288,7 @@
             <div class="relative max-w-3xl mx-auto">
                 <div class="roadmap-phase-card bg-brand-primary p-6 sm:p-8 rounded-xl shadow-2xl mb-8 opacity-0 animate-fade-in-up">
                     <div class="flex items-center mb-4">
-                        <div class="bg-brand-accent text-white rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">1</div>
+                        <div class="bg-brand-accent text-text-primary rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">1</div>
                         <div>
                             <h3 class="text-2xl font-semibold text-text-primary">Phase 1: Foundation (Q1 2025)</h3>
                             <p class="text-sm text-brand-accent">Target Completion: End of Q1 2025</p>
@@ -311,7 +304,7 @@
 
                 <div class="roadmap-phase-card bg-brand-primary p-6 sm:p-8 rounded-xl shadow-2xl mb-8 opacity-0 animate-fade-in-up animate-delay-100">
                     <div class="flex items-center mb-4">
-                        <div class="bg-brand-accent text-white rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">2</div>
+                        <div class="bg-brand-accent text-text-primary rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">2</div>
                         <div>
                             <h3 class="text-2xl font-semibold text-text-primary">Phase 2: AI Integration (Q2 2025)</h3>
                             <p class="text-sm text-brand-accent">Target Completion: End of Q2 2025</p>
@@ -327,7 +320,7 @@
 
                 <div class="roadmap-phase-card bg-brand-primary p-6 sm:p-8 rounded-xl shadow-2xl mb-8 opacity-0 animate-fade-in-up animate-delay-200">
                     <div class="flex items-center mb-4">
-                        <div class="bg-brand-accent text-white rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">3</div>
+                        <div class="bg-brand-accent text-text-primary rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">3</div>
                         <div>
                             <h3 class="text-2xl font-semibold text-text-primary">Phase 3: Ecosystem Development (Q3 2025)</h3>
                             <p class="text-sm text-brand-accent">Target Completion: End of Q3 2025</p>
@@ -343,7 +336,7 @@
 
                 <div class="roadmap-phase-card bg-brand-primary p-6 sm:p-8 rounded-xl shadow-2xl opacity-0 animate-fade-in-up animate-delay-300">
                     <div class="flex items-center mb-4">
-                        <div class="bg-brand-accent text-white rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">4</div>
+                        <div class="bg-brand-accent text-text-primary rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-4">4</div>
                         <div>
                             <h3 class="text-2xl font-semibold text-text-primary">Phase 4: Market Release (Q4 2025)</h3>
                             <p class="text-sm text-brand-accent">Target Completion: End of Q4 2025</p>
@@ -363,25 +356,22 @@
         </div>
     </section>
 
-    <section id="download" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-tr from-brand-accent via-purple-600 to-pink-600">
+    <section id="download" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-tr from-brand-accent via-brand-secondary to-brand-primary">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Access SyncopatedX</h2>
-            <p class="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-                Download the latest ISO, review the documentation, or access the project source.
+            <h2 class="text-4xl font-bold text-text-primary mb-6">Access SyncopatedX</h2> <p class="text-xl text-text-secondary mb-10 max-w-2xl mx-auto"> Download the latest ISO, review the documentation, or access the project source.
             </p>
             <div class="space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#" class="bg-white text-brand-accent font-bold py-4 px-10 rounded-lg text-lg shadow-xl hover:bg-gray-100 transition-colors duration-300 inline-block transform hover:scale-105">
+                <a href="#" class="bg-text-primary text-brand-primary hover:bg-text-secondary font-bold py-4 px-10 rounded-lg text-lg shadow-xl transition-colors duration-300 inline-block transform hover:scale-105">
                     Download ISO (v0.1 Alpha)
                 </a>
-                <a href="#" class="border-2 border-white text-white font-bold py-4 px-10 rounded-lg text-lg shadow-xl hover:bg-white hover:text-brand-accent transition-all duration-300 inline-block transform hover:scale-105">
+                <a href="#" class="border-2 border-text-primary text-text-primary hover:bg-text-primary hover:text-brand-primary font-bold py-4 px-10 rounded-lg text-lg shadow-xl transition-all duration-300 inline-block transform hover:scale-105">
                     View Documentation
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 px-4 sm:px-6 lg:px-8 bg-brand-primary border-t border-gray-700">
-        <div class="container mx-auto text-center text-text-secondary">
+    <footer class="py-10 px-4 sm:px-6 lg:px-8 bg-brand-primary border-t border-brand-secondary"> <div class="container mx-auto text-center text-text-secondary">
             <p>&copy; <span id="currentYear"></span> SyncopatedX Project. All Rights Reserved.</p>
             <p class="text-sm mt-2">A Linux environment for professional audio and AI applications.</p>
             <div class="mt-4 space-x-4">
