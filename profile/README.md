@@ -2,21 +2,21 @@
   <img src="syncopated016.png" alt="SyncopatedX Header Banner" width="100%">
 </p>
 
-## Test Pilot Framework for VFX/Animation Studio Workstation Management
+## Test Pilot Framework for Digital Content Development Workstation Management
 
-Syncopated is an experimental framework designed to address the complex challenges of managing Linux workstations in VFX and Animation studio environments. Through automated provisioning and standardized configuration management, this project serves as a testing ground for developing scalable solutions for studio pipeline infrastructure.
+Syncopated is an experimental framework designed to address the complex challenges of managing Linux workstations in digital content creation environments. Through automated provisioning and standardized configuration management, this project serves as a testing ground for developing scalable solutions for creative pipeline infrastructure.
 
 ### Current Test Implementation (Arch Linux)
 
 The framework currently operates as a proof-of-concept using Arch Linux, consisting of two integrated components:
 
-- **syncopated-iso**: Custom ISO builder creating specialized Live/Rescue media with VFX-focused tooling
+- **syncopated-iso**: Custom ISO builder creating specialized Live/Rescue media with content creation-focused tooling
 - **syncopated-ansible**: Comprehensive automation playbook handling workstation provisioning from bare metal to production-ready state
 
 This test environment validates approaches to:
 
 - **Automated Deployment**: Zero-touch workstation setup reducing IT overhead
-- **Configuration Standardization**: Consistent environments across artist workstations
+- **Configuration Standardization**: Consistent environments across creative workstations
 - **Pipeline Integration**: Pre-configured tools for content creation workflows
 - **Scalability Testing**: Framework patterns applicable to studio-scale deployments
 
@@ -24,10 +24,10 @@ This test environment validates approaches to:
 
 Lessons learned from the Arch Linux implementation will inform development of a production-ready framework based on Rocky Linux, designed specifically for:
 
-- Enterprise studio environments requiring RHEL compatibility
-- Integration with industry-standard pipeline tools (Maya, Houdini, Nuke, etc.)
+- Enterprise creative environments requiring RHEL compatibility
+- Integration with industry-standard content creation tools and pipelines
 - Centralized management of heterogeneous workstation fleets
-- Compliance with studio security and audit requirements
+- Compliance with enterprise security and audit requirements
 
 ### Key Automation Areas
 
